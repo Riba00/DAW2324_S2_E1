@@ -2,7 +2,10 @@ version: '3.8'
 
 services:
   php-apache:
-    image: php:7.4-apache
+    #image: php:7.4-apache
+    build:
+      context: ./Aplicatiuweb
+      dockerfile: Dockerfile
     volumes:
       - ./Aplicatiuweb:/var/www/html
     ports:
