@@ -9,30 +9,31 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Mi Sitio Web</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container">
+            <a class="navbar-brand text-white " href="#"><b>VirtualVision</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
+                        <a class="nav-link text-white" href="#">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca de</a>
+                        <a class="nav-link text-white" href="#">Generar Imagen</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
+                    <li class="nav-item" id="registre-li">
+                        <a class="nav-link text-white position-absolute end-0 me-5" href="registre.php">Registro</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua3HL5e0NnqDh8b8Bp0qkpc5+w0G1BdX7q1RG6Z3zPjW0lW+hXn8CA8l6" crossorigin="anonymous"></script>
 </body>
 
 </html>
