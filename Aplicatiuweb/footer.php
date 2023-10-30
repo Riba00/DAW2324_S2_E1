@@ -14,7 +14,6 @@
         </div>
     </footer>
 
-    <!-- Scripts de Bootstrap y otros scripts aquí -->
 </body>
 
 </html>
