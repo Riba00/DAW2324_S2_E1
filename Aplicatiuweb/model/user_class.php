@@ -3,8 +3,6 @@ require_once "dataBaseCon.php";
 
  class User {
     private $conn;
-    private $table_name = "users";
-
     public $id;
     public $userName;
     public $email;
@@ -34,32 +32,10 @@ require_once "dataBaseCon.php";
         return $stmt->fetch();
     }
 
-    public function create($name, $surname) {
-
-        $query = 'INSERT INTO users (name, surname) VALUES (:name, :surname)';
-    
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':surname', $surname);
-
-        $stmt->execute();
-    }
-
-    public function update($id, $name, $surname) {
-
-        $query = 'UPDATE persons SET name = :name, surname = :surname WHERE id = :id';
-    
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':id', $id);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':surname', $surname);
-        
-        $stmt->execute();
-    }
-
+   
     public function delete($id) {
         
-        $query = 'DELETE FROM persons WHERE id = :id';
+        $query = 'DELETE FROM users WHERE id = :id';
     
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':id', $id);
