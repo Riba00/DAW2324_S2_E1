@@ -2,14 +2,19 @@ version: '3.8'
 
 services:
   php-apache:
-    image: php:7.4-apache
+    #image: php:7.4-apache
+    build:
+      context: ./Aplicatiuweb
+      dockerfile: Dockerfile
     volumes:
       - ./Aplicatiuweb:/var/www/html
     ports:
       - "8003:80"
 
   mariadb:
-    image: mariadb
+    image: mariadb:10.5.2
+    volumes:
+      - "./database:/var/lib/mysql"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: admin1234
@@ -25,16 +30,6 @@ services:
       - "8080:80"
     environment:
       PMA_ARBITRARY: 1
-
-  #fastapi:
-    #build:
-    #  context: ./fastapi  # Ruta al directorio actual que contiene el Dockerfile y el subdirectorio 'app'
-    #  dockerfile: Dockerfile
-    #ports:
-    #  - "8001:80"
-    #command: uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
-    #volumes: 
-    #  - ../fastapi/app:/app
 
   fastapi:
     build:
