@@ -28,16 +28,13 @@
             <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima1.jpg" />
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(../img/product_picanova/ima2.jpg)" src="../img/product_picanova/ima2.jpg" />
+            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima2.jpg" />
           </a>
-          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big3.webp" class="item-thumb">
+          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
             <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima3.jpg" />
           </a>
-          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big4.webp" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big4.webp" />
-          </a>
-          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big.webp" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big.webp" />
+          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
+            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima4.jpg" />
           </a>
         </div>
         <!-- thumbs-wrap.// -->
