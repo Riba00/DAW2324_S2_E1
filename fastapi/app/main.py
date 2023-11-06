@@ -58,3 +58,9 @@ def get_products():
     except Exception as e:
         return {"message": f"Error: {str(e)}"}
     
+
+@app.get("/generateImages")
+def generateImages():
+    return "generateImages"
+    pass
+    

@@ -4,10 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página principal</title>
+    <title>VirtualVision</title>
     <link href="style.css" rel="stylesheet">
 
     <style>
+         .carousel-item img {
+        width: 100%; /* Ajusta el ancho a 100% del contenedor */
+        height: 600px; /* Establece la altura fija deseada */
+        object-fit: cover;
+        /* Ajusta la imagen a la altura */
+        }
         /* Cambiar el color de los íconos de Previous y Next a negro */
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
