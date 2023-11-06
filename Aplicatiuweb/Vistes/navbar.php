@@ -24,7 +24,7 @@
                         <a class="nav-link text-white" href="#">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Generar Imagen</a>
+                        <a class="nav-link text-white" href="/Vistes/imagePrompt.php">Generar Imagen</a>
                     </li>
                     
                     <li class="nav-item position-absolute end-0 me-5" id="registre-li">

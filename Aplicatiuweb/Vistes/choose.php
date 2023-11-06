@@ -16,28 +16,18 @@
             <p class="display-4">Per on començem?</p>
         </div>
         <div class="d-flex gap-2">
-            <a href="tu-enlace-imagen" class="btn btn-outline-secondary d-flex align-items-center btn-lg p-4">
-                <div class="text-center w-100">
+            <a href="/Vistes/imagePrompt.php" class="btn btn-outline-secondary d-flex align-items-center btn-lg p-4 w-200">
+                <div class="text-center">
                     <span class="mx-auto">Imatge</span>
                 </div>
-                <svg class="bi ms-1" width="30" height="30">
-                    <use xlink:href="#arrow-right-short"></use>
-                </svg>
             </a>
-            <a href="tu-enlace-producte" class="btn btn-outline-secondary d-flex align-items-center btn-lg p-4">
-                <div class="text-center w-100">
+            <a href="tu-enlace-producte" class="btn btn-outline-secondary d-flex align-items-center btn-lg p-4 w-200">
+                <div class="text-center">
                     <span class="mx-auto">Producte</span>
                 </div>
-                <svg class="bi ms-1" width="30" height="30">
-                    <use xlink:href="#arrow-right-short"></use>
-                </svg>
             </a>
         </div>
     </div>
-
-
-
-
 
 
     <?php include '../footer.php'; ?>
