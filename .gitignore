@@ -1,5 +1,4 @@
-
-apunts.txt
 *.yml
-docker-compose.yml
 database
+Dockerfile
+

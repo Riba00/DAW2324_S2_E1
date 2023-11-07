@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
 
     <!-- Enlazar archivo CSS de Bootstrap (desde node_modules) -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -28,14 +28,14 @@
                     </li>
                     
                     <li class="nav-item position-absolute end-0 me-5" id="registre-li">
-                        <a class="nav-link text-white" href="registre.php">Registro</a>
+                        <a class="nav-link text-white" href="/Vistes/login.php">Iniciar Sessión</a>
                     </li>
                    
                 </ul>
             </div>
         </div>
     </nav>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
