@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VirtualVision</title>
     <link href="style.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
     <style>
          .carousel-item img {
         width: 100%; /* Ajusta el ancho a 100% del contenedor */
