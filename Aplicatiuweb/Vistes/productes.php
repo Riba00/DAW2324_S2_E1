@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productes</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bootstrap/css/product_detail.css">
+    <link rel="stylesheet" href="../bootstrap/css/productes.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/product_detail.js"></script>
 </head>
@@ -50,7 +50,7 @@
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                 <div class="accordion-body">
                   <ul class="list-unstyled">
-                    <li><a href="#" class="text-dark">Electronics </a></li>
+                    <li><a href="#" class="text-dark">Electronica </a></li>
                     <li><a href="#" class="text-dark">Home items </a></li>
                     <li><a href="#" class="text-dark">Books, Magazines </a></li>
                     <li><a href="#" class="text-dark">Men's clothing </a></li>
