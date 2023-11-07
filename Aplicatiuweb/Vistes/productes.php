@@ -11,7 +11,7 @@
     <script src="../bootstrap/js/product_detail.js"></script>
 </head>
 <body>
-    <?php include "../navbar.php" ?>
+    <?php include "navbar.php" ?>
     
     <!-- sidebar + content -->
 <section class="">
@@ -415,6 +415,6 @@
 <!-- sidebar + content -->
 
 
-    <?php include "../footer.php" ?>
+    <?php include "footer.php" ?>
 </body>
 </html>

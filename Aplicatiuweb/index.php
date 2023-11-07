@@ -67,13 +67,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
     <?php include 'Vistes/footer.php'; ?>
 
 </body>
