@@ -1,7 +1,9 @@
-
-apunts.txt
 *.yml
-docker-compose.yml
 database
+<<<<<<< HEAD
 fastapi/app/__pycache__/main.cpython-310.pyc
 fastapi/app/__pycache__/main.cpython-310.pyc
+=======
+Dockerfile
+
+>>>>>>> main

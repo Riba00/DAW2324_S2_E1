@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,24 +10,12 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <style>
-<<<<<<< HEAD
          .carousel-item img {
         width: 100%; /* Ajusta el ancho a 100% del contenedor */
         height: 600px; /* Establece la altura fija deseada */
         object-fit: cover;
         /* Ajusta la imagen a la altura */
         }
-=======
-        .carousel-item img {
-            width: 100%;
-            /* Ajusta el ancho a 100% del contenedor */
-            height: 600px;
-            /* Establece la altura fija deseada */
-            object-fit: cover;
-            /* Ajusta la imagen a la altura */
-        }
-
->>>>>>> main
         /* Cambiar el color de los íconos de Previous y Next a negro */
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
@@ -73,7 +61,6 @@
     </div>
 
     <div class="text-center p-4 bg-secondary">
-<<<<<<< HEAD
     <div class="d-flex flex-column align-items-center">
         <p class="display-4">Texto en el centro</p>
         <a href="Vistes/choose.php" class="btn btn-primary btn-lg">Prueba gratis</a>
@@ -85,13 +72,6 @@
 
 
 
-=======
-        <div class="d-flex flex-column align-items-center">
-            <p class="display-4">Texto en el centro</p>
-            <a href="Vistes/choose.php" class="btn btn-primary btn-lg">Prueba gratis</a>
-        </div>
-    </div>
->>>>>>> main
 
 
     <?php include 'footer.php'; ?>

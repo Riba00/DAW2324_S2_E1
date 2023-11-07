@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,19 +26,16 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/Vistes/imagePrompt.php">Generar Imagen</a>
                     </li>
-                    <li class="nav-item" id="registre-li">
-<<<<<<< HEAD
-                        <a class="nav-link text-white position-absolute end-0 me-5" href="/registre.php">Registro</a>
-=======
-                        <a class="nav-link text-white position-absolute end-0 me-5" href="/Vistes/registre.php">Registro</a>
->>>>>>> main
+                    
+                    <li class="nav-item position-absolute end-0 me-5" id="registre-li">
+                        <a class="nav-link text-white" href="/Vistes/login.php">Iniciar Sessión</a>
                     </li>
+                   
                 </ul>
             </div>
         </div>
     </nav>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
