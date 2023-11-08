@@ -39,7 +39,7 @@
     <div class="container">
 
         <div class="input-group my-3">
-            <input type="text" class="form-control" placeholder="Enter a topic for the image"
+            <input required type="text" class="form-control" placeholder="Enter a topic for the image"
                 aria-label="Recipient's username" aria-describedby="button-addon2">
             <a href="imageChoose.php" class="btn btn-success" type="button" id="button-addon2">Button</a>
         </div>
