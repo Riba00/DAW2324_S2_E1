@@ -3,4 +3,6 @@ database
 Dockerfile
 */__pycache__*
 *.pyc
+*/bootstrap/css/bootstrap*
+*/bootstrap/js/bootstrap*
 
