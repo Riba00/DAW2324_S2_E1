@@ -15,7 +15,7 @@
 
     <!--  MAIN  -->
     <section class="text-center container">
-        <div class="row py-lg-3">
+        <div class="row pt-lg-3">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Image Result</h1>
 
@@ -23,15 +23,15 @@
                     <img src="../img/img1.jpg" class="img-thumbnail" alt="...">
                 </div>
 
-                <p>
-                    <a href="/Vistes/imagePrompt.php" class="btn btn-secondary mx-3 my-2">Reset Process</a>
-                    <a href="#" class="btn btn-primary my-2">Next Step</a>
+                <p class="mt-2">
+                    <a href="/Vistes/imagePrompt.php" class="btn btn-secondary mx-3">Reset Process</a>
+                    <a href="#" class="btn btn-primary">Save</a>
                 </p>
             </div>
         </div>
     </section>
 
-    <div class="py-3 bg-body-tertiary">
+    <div class="py-2 bg-body-tertiary">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -42,12 +42,15 @@
                                 of the card's content.</p>
                         </div>
                         <div class="card-body">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Enter a topic for the image"
-                                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <a href="imageChoose.php" class="btn btn-success" type="button"
-                                    id="button-addon2">Button</a>
-                            </div>
+                            <form method="post" action="imageChoose.php"
+                                class="row row-cols-lg-auto g-3 align-items-center">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="promptText"
+                                        placeholder="Enter the topic here">
+                                    <button disabled id="promptButton" type="submit"
+                                        class="btn btn-success">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -58,9 +61,21 @@
 
     <!--  FOOTER  -->
     <?php include '../footer.php'; ?>
+
+    <script>
+        const promptText = document.getElementById('promptText');
+        const submitButton = document.getElementById('promptButton');
+
+        promptText.addEventListener('input', () => {
+            event.preventDefault();
+            if (promptText.value.length > 4) {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', true);
+            }
+        });
+
+    </script>
 </body>
-
-
-
 
 </html>

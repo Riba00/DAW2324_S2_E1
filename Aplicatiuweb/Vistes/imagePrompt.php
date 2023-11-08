@@ -37,13 +37,14 @@
     <?php include '../navbar.php'; ?>
 
     <div class="container">
-
-        <div class="input-group my-3">
-            <input required type="text" class="form-control" placeholder="Enter a topic for the image"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
-            <a href="imageChoose.php" class="btn btn-success" type="button" id="button-addon2">Button</a>
+        <div class="my-3">
+            <form method="post" action="imageChoose.php" class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="promptText" placeholder="Enter the topic here">
+                    <button disabled id="promptButton" type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
         </div>
-
         <hr>
 
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -80,6 +81,21 @@
 
 
     <?php include '../footer.php'; ?>
+
+    <script>
+        const promptText = document.getElementById('promptText');
+        const submitButton = document.getElementById('promptButton');
+
+        promptText.addEventListener('input', () => {
+            event.preventDefault();
+            if (promptText.value.length > 4) {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', true);
+            }
+        });
+
+    </script>
 
 
 </body>

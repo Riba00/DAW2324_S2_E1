@@ -1,4 +1,5 @@
 *.yml
 database
 Dockerfile
+*.pyc
 
