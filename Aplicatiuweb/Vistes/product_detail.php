@@ -25,7 +25,9 @@
         </div>
         <div class="d-flex justify-content-center mb-3">
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"  class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima1.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. .'"/>'
+          ?>
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
             <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima2.jpg" />
@@ -100,11 +102,11 @@
             <div class="col-md-4 col-6 mb-3">
               <label class="mb-2 d-block">Quantity</label>
               <div class="input-group mb-3" style="width: 170px;">
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark" onclick="sumarUnProducte()">
+                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark" onclick="restarUnProducte()">
                 <span class="glyphicon glyphicon-minus">-</span>                
                 </button>
-                <input id ="cantitat_productes" type="text" class="form-control text-center border border-secondary" value = "hola" />
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark" onclick="restarUnProducte()">
+                <input id ="cantitat_productes" type="text" class="form-control text-center border border-secondary" value = "1" />
+                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark" onclick="sumarUnProducte()">
                   <span class="glyphicon glyphicon-plus">+</span>               
                 </button>
               </div>

@@ -4,11 +4,6 @@ function changeImage(element) {
 }
  
 function sumarUnProducte() {
-<<<<<<< HEAD
-      document.getElementById("cantitat_productes").value ="Hola"
-     
-}  
-=======
       let valor = document.getElementById("cantitat_productes")
       valor.value = parseInt(valor.value) + 1
 }  
@@ -20,4 +15,3 @@ function restarUnProducte() {
             valor.value = valor.value - 1    
       }
 } 
->>>>>>> master
