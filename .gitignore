@@ -1,4 +1,6 @@
 *.yml
 database
 Dockerfile
+*/__pycache__*
+*.pyc
 
