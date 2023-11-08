@@ -31,11 +31,10 @@ if(isset($_SESSION['usuario_nombre'])) {
             
         </form>
     </div>
-
+    
     <?php include 'footer.php'; ?>
 
-    <!-- Scripts de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua3HL5e0NnqDh8b8Bp0qkpc5+w0G1BdX7q1RG6Z3zPjW0lW+hXn8CA8l6" crossorigin="anonymous"></script>
+   
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 require_once '../Model/user_class.php';
 
 class ControladorLogin {
@@ -13,15 +13,18 @@ class ControladorLogin {
             $usuari = new User();
             $loginar = $usuari->loginar($email, $contrasena);
             if ($loginar) {
+                
                 // El usuario fue autenticado correctamente
                 // Iniciar sesión y redirigirlo a la página de perfil
                 $infousuari = $usuari->recuperarInfoUsuari($email);
                 
                 if ($infousuari) {
-                    session_start();
+                    $valor = true;
+                    $_SESSION['loggedin'] = $valor;
                     $_SESSION['usuario_id'] = $infousuari['id'];
                     $_SESSION['usuario_nombre'] = $infousuari['username'];
                     $_SESSION['usuario_email'] = $email;
+                    
                 }
                 header("Location: /Vistes/perfil.php");// Redirige a la página de perfil después del inicio de sesión exitoso
                 exit();
@@ -42,9 +45,9 @@ class ControladorLogin {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $contrasena = $_POST['contrasena'];
-
     // Instanciar el controlador y llamar al método logejar para manejar el inicio de sesión
     $controladorlogin = new ControladorLogin();
-    $controladorlogin->logejar($email, $contrasena);
+    $controladorlogin->logejar($email, $contrasena);   
 }
+
 ?>

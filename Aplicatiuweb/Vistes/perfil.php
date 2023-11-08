@@ -1,4 +1,4 @@
-<?php session_start();
+<?php session_start(); 
 if(!isset($_SESSION['usuario_nombre'])) {
     // La sesión está iniciada, redirigir a la página de perfil o a la página que desees
     header("Location: /Vistes/login.php");

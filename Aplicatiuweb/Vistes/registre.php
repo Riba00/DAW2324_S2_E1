@@ -32,7 +32,7 @@ if(isset($_SESSION['usuario_nombre'])) {
                 <input required type="password" class="form-control" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="escriba su contraseña de nuevo">
             </div>
 
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
             <a href="login.php" class="btn btn-secondary">Iniciar Sesión</a>
         </form>
     </div>

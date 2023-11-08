@@ -20,9 +20,10 @@ class ControladorRegistro {
                     $_SESSION['usuario_id'] = $idDelUsuario;
                     $_SESSION['usuario_nombre'] = $nombre;
                     $_SESSION['usuario_email'] = $email;
-
+                    $valor = true;
+                    $_SESSION['loggedin'] = $valor;
                     // Redirigir a la página de perfil
-                    header("Location: /Vistes/perfil.php");
+                    header("Location: /Vistes/login.php");
                     exit();
                 } else {
                     echo "Error al crear el usuario.";

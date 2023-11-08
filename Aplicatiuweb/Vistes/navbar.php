@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +34,18 @@
             </div>
         </div>
     </nav>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <?php 
+    if (!isset($_SESSION['loggedin'])){
+        $_SESSION['loggedin'] = false;
+    }
+    elseif ($_SESSION['loggedin']) {
+        echo '<script>var sesionIniciada = true;</script>';
+    } 
+    ?>
+    <script src="../Vistes/script.js"></script>
+
 </body>
 
 </html>
