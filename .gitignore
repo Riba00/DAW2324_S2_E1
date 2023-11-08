@@ -1,5 +1,6 @@
-
-apunts.txt
 *.yml
-docker-compose.yml
 database
+Dockerfile
+*/__pycache__*
+*.pyc
+

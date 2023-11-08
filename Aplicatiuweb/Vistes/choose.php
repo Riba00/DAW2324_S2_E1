@@ -21,7 +21,7 @@
                     <span class="mx-auto">Imatge</span>
                 </div>
             </a>
-            <a href="tu-enlace-producte" class="btn btn-outline-secondary d-flex align-items-center btn-lg p-4 w-200">
+            <a href="/Vistes/productes.php" class="btn btn-outline-secondary d-flex align-items-center btn-lg p-4 w-200">
                 <div class="text-center">
                     <span class="mx-auto">Producte</span>
                 </div>
