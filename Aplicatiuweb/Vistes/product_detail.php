@@ -11,7 +11,10 @@
     <script src="../bootstrap/js/product_detail.js"></script>
 </head>
 <body>
-    <?php include "../navbar.php" ?>
+    <?php include "../navbar.php";
+          include "../Controladors/imaProControl.php";
+          $imageMostrar = new ImaProductControl();
+    ?>
 
 <!-- content -->
 <section class="py-5">
@@ -26,17 +29,23 @@
         <div class="d-flex justify-content-center mb-3">
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"  class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 0) .'"/>'
           ?>
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima2.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 1) .'"/>'
+          ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima3.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 2) .'"/>'
+          ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima4.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 3) .'"/>'
+          ?>          
           </a>
         </div>
         <!-- thumbs-wrap.// -->
