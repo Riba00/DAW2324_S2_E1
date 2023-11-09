@@ -2,8 +2,10 @@
 session_start();
 include '../Model/ImatgeProducte.php';
 
+define("RUTA", "../img/product_picanova/");
+
 class ImaProductControl {
-    const RUTA = "../img/product_picanova/";
+    
 
     private $imaProductModel;
 
@@ -19,3 +21,5 @@ class ImaProductControl {
         
     }
 }
+$ima = new ImaProductControl();
+$ruta = $ima->mostrarImagen(1, 1);
