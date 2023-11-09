@@ -13,7 +13,10 @@
 <body>
     <?php include "../navbar.php";
           include "../Controladors/imaProControl.php";
+          include "../Controladors/productControl.php";
+
           $imageMostrar = new ImaProductControl();
+          $productMostrar = new ProducteControl();
     ?>
 
 <!-- content -->
@@ -54,8 +57,9 @@
       <main class="col-lg-6">
         <div class="ps-lg-3">
           <h4 class="title text-dark">
-            Quality Men's Hoodie for Winter, Men's Fashion <br />
-            Casual Hoodie
+            <?php
+              print_r($productMostrar->mostrarNom(1));
+            ?>
           </h4>
           <div class="d-flex flex-row my-3">
             <div class="text-warning mb-1 me-2">
@@ -73,7 +77,11 @@
           </div>
 
           <div class="mb-3">
-            <span class="h5">$75.00</span>
+            <span class="h5">
+              <?php
+                print_r($productMostrar->mostrarPreu(1));
+              ?>
+            </span>
             <span class="text-muted">/per box</span>
           </div>
 

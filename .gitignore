@@ -5,4 +5,5 @@ Dockerfile
 *.pyc
 */bootstrap/css/bootstrap*
 */bootstrap/js/bootstrap*
+snippet*
 
