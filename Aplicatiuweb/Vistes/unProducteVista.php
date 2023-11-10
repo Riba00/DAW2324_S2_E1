@@ -17,6 +17,7 @@
 
           $imageMostrar = new ImaProductControl();
           $productMostrar = new ProducteControl();
+          $idPro = $_GET["idPro"]
     ?>
 
 <!-- content -->
@@ -32,22 +33,22 @@
         <div class="d-flex justify-content-center mb-3">
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"  class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 0) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 0) .'"/>'
           ?>
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 1) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 1) .'"/>'
           ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 2) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 2) .'"/>'
           ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen(1, 3) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 3) .'"/>'
           ?>          
           </a>
         </div>
@@ -58,7 +59,7 @@
         <div class="ps-lg-3">
           <h4 class="title text-dark">
             <?php
-              print_r($productMostrar->mostrarNom(1));
+              print_r($productMostrar->mostrarNom($idPro));
             ?>
           </h4>
           <div class="d-flex flex-row my-3">
@@ -79,7 +80,7 @@
           <div class="mb-3">
             <span class="h5">
               <?php
-                print_r($productMostrar->mostrarPreu(1));
+                print_r($productMostrar->mostrarPreu($idPro));
               ?>
             </span>
             <span class="text-muted">/per box</span>

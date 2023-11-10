@@ -1,5 +1,5 @@
 <?php 
-include '../Model/producte.php';
+include '../Model/producteModel.php';
 
 class ProducteControl {
     
@@ -20,5 +20,12 @@ class ProducteControl {
     public function mostrarNom($productId) {
         $nom = $this->productControl->obtenirName($productId);
         return $nom[0]["name"]; //sols tindra un resultat
+    }
+
+    public function llistarProducts () {
+        $productes = $this->productControl->obtenirTots();
+
+        header('Content-Type: application/json');
+        echo json_encode($productes);
     }
 }

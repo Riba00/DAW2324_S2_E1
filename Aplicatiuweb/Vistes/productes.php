@@ -11,7 +11,14 @@
     <script src="../bootstrap/js/product_detail.js"></script>
 </head>
 <body>
-    <?php include "../navbar.php" ?>
+    <?php 
+      require_once "../navbar.php";
+      require_once "../Controladors/imaProControl.php";
+      require_once "../Controladors/productControl.php";
+
+      $imageMostrar = new ImaProductControl();
+      $productMostrar = new ProducteControl();
+    ?>
     
     <!-- sidebar + content -->
 <section class="">
@@ -261,17 +268,27 @@
             </div>
           </div>
         </header>
-
+        
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
             <div class="card w-100 my-2 shadow-2-strong">
-              <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/10.webp" class="card-img-top" />
+              <?php
+                echo '<a href = "unProducteVista.php?idPro=1" > <img src="'. $imageMostrar->mostrarImagen(1, 0) .'" class="card-img-top" /></a>';
+              ?>
               <div class="card-body d-flex flex-column">
                 <div class="d-flex flex-row">
-                  <h5 class="mb-1 me-1">$34,50</h5>
-                  <span class="text-danger"><s>$49.99</s></span>
+                  <h5 class="mb-1 me-1">
+                    <?php
+                      print_r($productMostrar->mostrarPreu(1));
+                    ?>
+                  </h5>
+                  <span class="text-danger"><s>$16.99</s></span>
                 </div>
-                <p class="card-text">T-shirts with multiple colors, for men and lady</p>
+                <p class="card-text">
+                  <?php
+                    print_r($productMostrar->mostrarNom(1));
+                  ?>
+                </p>
                 <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
                   <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                   <a href="#!" class="btn btn-light border icon-hover px-2 pt-2"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>

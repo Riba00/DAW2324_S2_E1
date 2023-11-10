@@ -37,6 +37,20 @@ class Product {
         } else {
             return null;
         }
-    }    
+    }   
+    
+    public function obtenirTots () {
+        $sql = "SELECT * FROM products";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return null;
+        }
+    }
 
 }

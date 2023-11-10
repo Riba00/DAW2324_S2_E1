@@ -1,6 +1,5 @@
 <?php 
-session_start();
-include '../Model/ImatgeProducte.php';
+include '../Model/ImatgeProducteModel.php';
 
 define("RUTA", "../img/product_picanova/");
 
@@ -20,4 +19,5 @@ class ImaProductControl {
         return (RUTA.$rutaImagen[$nimatge]["nom"]);
         
     }
+
 }
