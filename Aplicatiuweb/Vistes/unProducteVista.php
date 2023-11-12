@@ -27,7 +27,9 @@
       <aside class="col-lg-6">
         <div class="border rounded-4 mb-3 d-flex justify-content-center">
           <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" >
-            <img id = "imatge_producte" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="../img/product_picanova/ima1.jpg" />
+          <?php
+            echo '<img id = "imatge_producte" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="'. $imageMostrar->obtenirRutaIma($idPro, 0) .'"/>'
+          ?>
           </a>
         </div>
         <div class="d-flex justify-content-center mb-3">

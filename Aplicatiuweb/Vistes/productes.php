@@ -270,13 +270,13 @@
           </div>
         </header>
 
-        <div id="products-container" ></div>
+        <section id="products-container" class = "row my-5" ></section>
 
         
 
         <div id="pagination-container"></div>
 
-        
+
       </div>
     </div>
   </div>            

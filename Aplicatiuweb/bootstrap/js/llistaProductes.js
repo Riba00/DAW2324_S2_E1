@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products-container');
     const paginationContainer = document.getElementById('pagination-container');
-    const itemsPerPage = 9;
+    const itemsPerPage = 6;
 
     fetch('http://localhost:8003/Controladors/jsonProductes.php')
         .then(response => response.json())
@@ -24,17 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Crear una fila para contener los productos
         const row = document.createElement('div');
-        row.classList.add('col');
-
+        row.classList.add('row');
+        
         currentPageItems.forEach(item => {
         // Crear una columna para cada producto
         const col = document.createElement('div');
-        col.classList.add('row'); // Cada producto ocupará 4 unidades en dispositivos pequeños
+        col.classList.add('col-lg-4'); 
+        col.classList.add('col-md-6'); 
+        col.classList.add('col-sm-6'); 
+        col.classList.add('d-flex'); 
+
+
         // Crear el elemento del producto
         const productElement = document.createElement('div');
         productElement.innerHTML = `
-            <div class= "col-lg-4 col-md-6 col-sm-6 d-flex">
-                <div class="card w-100 my-2 shadow-2-strong">
+                <div class="card w-100 h-100 my-2 mx-2 shadow-2-strong d-flex">
                     <a href = "unProducteVista.php?idPro=${item.id}" > <img src="../img/product_picanova/${item.nom}" class="card-img-top" /></a>
                     <input value = ${item.id} type ="hidden">
                     <div class="card-body d-flex flex-column">
@@ -47,12 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="card-text">
                             ${item.name}
                         </p>
-                        <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                        <div class="card-footer d-flex align-items-center pt-3 px-0 pb-0 mt-auto">
                             <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
                         </div>
                     </div>
-                </div>
-            </div>`;
+                </div>`;
 
         // Agregar la columna al contenedor de la fila
         col.appendChild(productElement);
