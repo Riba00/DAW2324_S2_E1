@@ -53,4 +53,20 @@ class Product {
         }
     }
 
+    public function obtenirProducteImagens () {
+        $sql = "SELECT products.id, products.sell_price, products.name, productImages.nom
+                FROM products 
+                LEFT JOIN productImages ON productImages.product_id =  products.id and productImages.nom LIKE '%ima1.%'";  
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return null;
+        }
+    }
+
 }

@@ -14,10 +14,10 @@ class ImaProductControl {
 
     //Entre $productId que es el id del producte 
     // $nimatge el nom de la imatge que es solicita
-    public function mostrarImagen($productId, $nimatge) {
+    public function obtenirRutaIma($productId, $nimatge) {
         $rutaImagen = $this->imaProductModel->obtenerNomImagens($productId);
-        return (RUTA.$rutaImagen[$nimatge]["nom"]);
-        
+        return (RUTA.$rutaImagen[$nimatge]["nom"]);  
     }
 
+    
 }

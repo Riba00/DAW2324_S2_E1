@@ -13,7 +13,7 @@
 <body>
     <?php include "../navbar.php";
           include "../Controladors/imaProControl.php";
-          include "../Controladors/productControl.php";
+          include "../Controladors/producteControl.php";
 
           $imageMostrar = new ImaProductControl();
           $productMostrar = new ProducteControl();
@@ -33,22 +33,22 @@
         <div class="d-flex justify-content-center mb-3">
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"  class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 0) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 0) .'"/>'
           ?>
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 1) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 1) .'"/>'
           ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 2) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 2) .'"/>'
           ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->mostrarImagen($idPro, 3) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 3) .'"/>'
           ?>          
           </a>
         </div>
