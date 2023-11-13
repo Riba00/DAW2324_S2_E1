@@ -14,9 +14,7 @@
 <body>
     <?php 
       require_once "../navbar.php";
-      require_once "../Controladors/imaProControl.php";
       require_once "../Controladors/producteControl.php";
-      $imageMostrar = new ImaProductControl();
       $productMostrar = new ProducteControl();
 
     ?>
