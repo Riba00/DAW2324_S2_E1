@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+    <title>DAW2324_S2_E1</title>
 
     <!-- Enlazar archivo CSS de Bootstrap (desde node_modules) -->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -27,7 +27,7 @@
                     </li>
                     
                     <li class="nav-item position-absolute end-0 me-5" id="registre-li">
-                        <a class="nav-link text-white" href="/Vistes/login.php">Iniciar Sessión</a>
+                        <a class="nav-link text-white" href="/Vistes/login.php">Iniciar Sesión</a>
                     </li>
                    
                 </ul>
@@ -44,7 +44,7 @@
         echo '<script>var sesionIniciada = true;</script>';
     } 
     ?>
-    <script src="../Vistes/script.js"></script>
+    <script src="../javascript/sessio.js"></script>
 
 </body>
 

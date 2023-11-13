@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 require_once '../Model/user_class.php';
 
 class ControladorLogin {
@@ -13,7 +14,6 @@ class ControladorLogin {
             $usuari = new User();
             $loginar = $usuari->loginar($email, $contrasena);
             if ($loginar) {
-                
                 // El usuario fue autenticado correctamente
                 // Iniciar sesión y redirigirlo a la página de perfil
                 $infousuari = $usuari->recuperarInfoUsuari($email);
@@ -31,12 +31,13 @@ class ControladorLogin {
             } else {
                 // El usuario no fue autenticado correctamente
                 // Redirigirlo a la página de inicio de sesión con un mensaje de error
-                header("Location: /Vistes/login.php"); // Redirige a la página de inicio con un mensaje de error (puedes manejar este error en la página de inicio)
+                header("Location: /Vistes/login.php?error=1"); // Agrega el parámetro error=1
                 exit();
             }
         } else {
             // Campos vacíos, mostrar mensaje de error
-            echo "Por favor, complete todos los campos del formulario.";
+            header("Location: /Vistes/login.php?error=1"); // Agrega el parámetro error=1
+            exit();
         }
     }
 }
@@ -48,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Instanciar el controlador y llamar al método logejar para manejar el inicio de sesión
     $controladorlogin = new ControladorLogin();
     $controladorlogin->logejar($email, $contrasena);   
+} else {
+    echo("L'usuari o la contrasenya son incorrectes");
 }
-
 ?>
