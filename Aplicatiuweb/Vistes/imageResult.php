@@ -68,7 +68,7 @@
 
         promptText.addEventListener('input', () => {
             event.preventDefault();
-            if (promptText.value.length > 4) {
+            if (promptText.value.length > 3) {
                 submitButton.removeAttribute('disabled');
             } else {
                 submitButton.setAttribute('disabled', true);

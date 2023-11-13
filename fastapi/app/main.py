@@ -3,6 +3,11 @@ import base64
 import requests
 from fastapi import FastAPI
 import sqlite3
+from fastapi.middleware.cors import CORSMiddleware
+from openai import OpenAI
+from pydantic import BaseModel
+from dotenv import load_dotenv
+
 
 """ AIXO SERÀ LA CREACIÓ DE LA TAULA A LA BASE DE DADES
 conn = sqlite3.connect('ejemplo.db')
@@ -22,6 +27,18 @@ conn.commit()
 
 url = "https://api.picanova.com/api/beta"
 app = FastAPI()
+
+origins = [
+    "http://php-apache:8003",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 usuari = "virtual-vision"
 contrasenya = "2b8af5289aa93fc62eae989b4dcc9725"
@@ -58,9 +75,22 @@ def get_products():
     except Exception as e:
         return {"message": f"Error: {str(e)}"}
     
+class RequestData(BaseModel):
+    topic: str
+@app.post("/generateImages")
+async def generateImages(request_data: RequestData):
+    topic = request_data.topic
 
-@app.get("/generateImages")
-def generateImages():
-    return "generateImages"
-    pass
+    response = {
+        "created": 1699298517,
+        "data": [
+            {
+                "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-7Cyap9LAOWpeS40P4Z31xwfR/user-QGd5FErbMvxmPc6lxpUU84m5/img-5n8E4ybmZtLbAQPz4sEHGbys.png?st=2023-11-06T18%3A21%3A57Z&se=2023-11-06T20%3A21%3A57Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-11-06T15%3A00%3A26Z&ske=2023-11-07T15%3A00%3A26Z&sks=b&skv=2021-08-06&sig=ZaDo3orBaShignckV%2BfuQqgG6QgiYCA5yS2NlVT6TKU%3D"
+            },
+            {
+                "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-7Cyap9LAOWpeS40P4Z31xwfR/user-QGd5FErbMvxmPc6lxpUU84m5/img-DrfGFBxQyuQ2FfIJlBshGz2d.png?st=2023-11-06T18%3A21%3A57Z&se=2023-11-06T20%3A21%3A57Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-11-06T15%3A00%3A26Z&ske=2023-11-07T15%3A00%3A26Z&sks=b&skv=2021-08-06&sig=XAXdHhAsi5VBtyRLtfoTRYatt4Zx8xY0qvo2BnjtOrw%3D"
+            }
+        ]
+    }
+    return response["data"]
     

@@ -38,13 +38,14 @@
 
     <div class="container">
         <div class="my-3">
-            <form method="post" action="imageChoose.php" class="row row-cols-lg-auto g-3 align-items-center">
+            <form method="post" action="/Controladors/imageController.php" class="row row-cols-lg-auto g-3 align-items-center">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="promptText" placeholder="Enter the topic here">
-                    <button disabled id="promptButton" type="submit" class="btn btn-success">Submit</button>
+                    <input type="text" class="form-control" name="promptText" id="promptText" placeholder="Enter the topic here">
+                    <button disabled name="promptButton" id="promptButton" type="submit" class="btn btn-success">Submit</button>
                 </div>
             </form>
         </div>
+
         <hr>
 
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -88,15 +89,18 @@
 
         promptText.addEventListener('input', () => {
             event.preventDefault();
-            if (promptText.value.length > 4) {
+            if (promptText.value.length > 3) {
                 submitButton.removeAttribute('disabled');
             } else {
                 submitButton.setAttribute('disabled', true);
             }
         });
+        
+
+
+
 
     </script>
-
 
 </body>
 
