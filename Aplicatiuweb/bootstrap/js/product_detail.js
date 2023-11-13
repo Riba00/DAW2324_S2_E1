@@ -4,6 +4,14 @@ function changeImage(element) {
 }
  
 function sumarUnProducte() {
-      document.getElementById("cantitat_productes").value ="Hola"
-     
+      let valor = document.getElementById("cantitat_productes")
+      valor.value = parseInt(valor.value) + 1
 }  
+
+function restarUnProducte() {
+      let valor = document.getElementById("cantitat_productes")
+      valor.value = parseInt(valor.value)
+      if (valor.value > 0) {
+            valor.value = valor.value - 1    
+      }
+} 
