@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../bootstrap/css/product_detail.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../bootstrap/js/product_detail.js"></script>
+    <script src="./js/product_detail.js"></script>
 </head>
 <body>
 <!-- content -->

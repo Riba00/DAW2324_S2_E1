@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../bootstrap/css/productes.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/product_detail.js"></script>
-    <script src = "../bootstrap/js/llistaProductes.js"></script>
+    <script src = "./js/llistaProductes.js"></script>
 </head>
 <body>
     <?php 
