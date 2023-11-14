@@ -4,3 +4,4 @@ Requests==2.31.0
 mysql-connector-python==8.0.33
 python-dotenv==0.18.0
 python-jose[pyjwt]
+python-multipart==0.0.5
