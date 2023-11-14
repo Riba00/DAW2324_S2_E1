@@ -3,6 +3,11 @@ import base64
 import requests
 from fastapi import FastAPI
 import sqlite3
+from fastapi.middleware.cors import CORSMiddleware
+from openai import OpenAI
+from pydantic import BaseModel
+from dotenv import load_dotenv
+
 
 """ AIXO SERÀ LA CREACIÓ DE LA TAULA A LA BASE DE DADES
 conn = sqlite3.connect('ejemplo.db')
@@ -22,6 +27,18 @@ conn.commit()
 
 url = "https://api.picanova.com/api/beta"
 app = FastAPI()
+
+origins = [
+    "http://php-apache:8003",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 usuari = "virtual-vision"
 contrasenya = "2b8af5289aa93fc62eae989b4dcc9725"
@@ -58,9 +75,35 @@ def get_products():
     except Exception as e:
         return {"message": f"Error: {str(e)}"}
     
+class RequestData(BaseModel):
+    topic: str
+@app.post("/generateImages")
+async def generateImages(request_data: RequestData):
+    # API CALL
+    # load_dotenv()
+    # client = OpenAI()
+    # topic = request_data.topic
+    # response = client.images.generate(
+    #     prompt=topic,
+    #     n=3,
+    #     size="256x256"
+    # )
 
-@app.get("/generateImages")
-def generateImages():
-    return "generateImages"
-    pass
+    # API RESPONSE SIMULATION
+    response = {
+        "created": 1699298517,
+        "data": [
+            {
+                "url": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699833600&semt=sph"
+            },
+            {
+                "url": "https://img.freepik.com/premium-photo/mountain-lake-with-mountain-background_931553-20878.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699228800&semt=sph"
+            },
+            {
+                "url": "https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_640.jpg"
+            }
+        ]
+    }
+
+    return response["data"]
     

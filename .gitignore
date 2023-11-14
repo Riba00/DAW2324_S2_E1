@@ -1,6 +1,7 @@
 *.yml
 database
 Dockerfile
+*.pyc
 */__pycache__*
 *.pyc
 */bootstrap/css/bootstrap*
