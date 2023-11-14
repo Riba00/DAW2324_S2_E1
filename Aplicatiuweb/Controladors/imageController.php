@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Prompt button
 if (isset($_POST['promptButton'])) {
     $topic = $_POST['promptText'];
     if (empty($_SESSION['promptList'])){
@@ -32,6 +33,7 @@ if (isset($_POST['promptButton'])) {
     header("Location: /Vistes/imageChoose.php");
 }
 
+// Reset button
 if (isset($_POST['resetButton'])) {
     unset($_SESSION['promptList']);
     unset($_SESSION['imagesUrls']);

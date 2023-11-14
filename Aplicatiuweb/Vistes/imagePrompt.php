@@ -36,6 +36,7 @@
 <body>
     <?php include '../navbar.php'; ?>
 
+    <!-- PROMPT INPUT -->
     <div class="container">
         <div class="my-3">
             <form method="post" action="/Controladors/imageController.php" class="row row-cols-lg-auto g-3 align-items-center">

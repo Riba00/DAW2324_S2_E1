@@ -40,6 +40,7 @@ session_start();
         </div>
     </section>
 
+    <!--  HISTORY  -->
     <div class="py-2 bg-body-tertiary">
         <div class="container">
             <div class="row">

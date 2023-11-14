@@ -79,8 +79,17 @@ class RequestData(BaseModel):
     topic: str
 @app.post("/generateImages")
 async def generateImages(request_data: RequestData):
-    topic = request_data.topic
+    # API CALL
+    # load_dotenv()
+    # client = OpenAI()
+    # topic = request_data.topic
+    # response = client.images.generate(
+    #     prompt=topic,
+    #     n=3,
+    #     size="256x256"
+    # )
 
+    # API RESPONSE SIMULATION
     response = {
         "created": 1699298517,
         "data": [
