@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAW2324_S2_E1</title>
+    <title>Virtual Vision</title>
 
     <!-- Enlazar archivo CSS de Bootstrap (desde node_modules) -->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
