@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,30 +45,19 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <a href="/Vistes/imageResult.php">
-                            <img src="../img/img1.jpg" class="img-thumbnail zoom" alt="...">
-                        </a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <a href="/Vistes/imageResult.php">
-                            <img src="../img/img1.jpg" class="img-thumbnail zoom" alt="...">
-                        </a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <a href="/Vistes/imageResult.php">
-                            <img src="../img/img1.jpg" class="img-thumbnail zoom" alt="...">
-                        </a>
-                    </div>
-                </div>
-
+                <?php
+                $imagesUrls = $_SESSION['imagesUrls'];
+                foreach ($imagesUrls as $i => $imageUrl) {
+                    echo '<div class="col">
+                            <div class="card shadow-sm">
+                                <a href="/Vistes/imageResult.php?id='.$i.'">
+                                    <img src="' . $imageUrl["url"] . '" class="img-thumbnail zoom" alt="...">
+                                </a>
+                            </div>
+                        </div>';
+                }
+                ?>
             </div>
-
         </div>
     </div>
 

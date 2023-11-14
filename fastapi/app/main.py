@@ -85,12 +85,16 @@ async def generateImages(request_data: RequestData):
         "created": 1699298517,
         "data": [
             {
-                "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-7Cyap9LAOWpeS40P4Z31xwfR/user-QGd5FErbMvxmPc6lxpUU84m5/img-5n8E4ybmZtLbAQPz4sEHGbys.png?st=2023-11-06T18%3A21%3A57Z&se=2023-11-06T20%3A21%3A57Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-11-06T15%3A00%3A26Z&ske=2023-11-07T15%3A00%3A26Z&sks=b&skv=2021-08-06&sig=ZaDo3orBaShignckV%2BfuQqgG6QgiYCA5yS2NlVT6TKU%3D"
+                "url": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699833600&semt=sph"
             },
             {
-                "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-7Cyap9LAOWpeS40P4Z31xwfR/user-QGd5FErbMvxmPc6lxpUU84m5/img-DrfGFBxQyuQ2FfIJlBshGz2d.png?st=2023-11-06T18%3A21%3A57Z&se=2023-11-06T20%3A21%3A57Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-11-06T15%3A00%3A26Z&ske=2023-11-07T15%3A00%3A26Z&sks=b&skv=2021-08-06&sig=XAXdHhAsi5VBtyRLtfoTRYatt4Zx8xY0qvo2BnjtOrw%3D"
+                "url": "https://img.freepik.com/premium-photo/mountain-lake-with-mountain-background_931553-20878.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699228800&semt=sph"
+            },
+            {
+                "url": "https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_640.jpg"
             }
         ]
     }
+
     return response["data"]
     

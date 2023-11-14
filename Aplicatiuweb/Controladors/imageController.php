@@ -21,9 +21,9 @@ if (isset($_POST['promptButton'])) {
         echo 'Error';
     } else {
         $imagesUrls = $result;
+        session_start();
+        $_SESSION['imagesUrls'] = json_decode($imagesUrls, true);
     }
 
-    print_r($imagesUrls);
-
-    header("Location: /Vistes/imageResult.php");
+    header("Location: /Vistes/imageChoose.php");
 }

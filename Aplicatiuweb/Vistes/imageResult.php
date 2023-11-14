@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +25,11 @@
                 <h1 class="fw-light">Image Result</h1>
 
                 <div class="card shadow-sm">
-                    <img src="../img/img1.jpg" class="img-thumbnail" alt="...">
+                    <?php
+                    $imagesUrls = $_SESSION['imagesUrls'];
+                    $id = $_GET['id'];
+                    echo '<img src="' . $imagesUrls[$id]["url"] . '" class="img-thumbnail" alt="...">';
+                    ?>
                 </div>
 
                 <p class="mt-2">
