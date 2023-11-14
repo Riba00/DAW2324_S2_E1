@@ -8,7 +8,6 @@ if(isset($_SESSION['usuario_nombre'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <?php include 'navbar.php'; ?>
 <head>
     <script>
