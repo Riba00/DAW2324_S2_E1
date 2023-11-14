@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="../bootstrap/css/productes.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/product_detail.js"></script>
-    <script src = "../bootstrap/js/llistaProductes.js"></script>
+    <script src = "./js/llistaProductes.js"></script>
 </head>
 <body>
     <?php 
       require_once "../navbar.php";
-      require_once "../Controladors/imaProControl.php";
       require_once "../Controladors/producteControl.php";
-      $imageMostrar = new ImaProductControl();
       $productMostrar = new ProducteControl();
 
     ?>

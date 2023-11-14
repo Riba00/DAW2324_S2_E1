@@ -1,6 +1,8 @@
 <?php 
 include '../Model/producteModel.php';
 
+define("RUTA", "../img/product_picanova/");
+
 class ProducteControl {
     
     private $productModel;
@@ -31,6 +33,13 @@ class ProducteControl {
         $productes = $this->productModel->obtenirProducteImagens();
         header('Content-Type: application/json');
         echo json_encode($productes);
+    }
+
+    //Entre $productId que es el id del producte 
+    // $nimatge el nom de la imatge que es solicita
+    public function obtenirRutaIma($productId, $nimatge) {
+        $rutaImagen = $this->productModel->obtenerNomImagens($productId);
+        return (RUTA.$rutaImagen[$nimatge]["nom"]);  
     }
 
 }

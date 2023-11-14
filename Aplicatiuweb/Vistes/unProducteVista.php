@@ -1,3 +1,10 @@
+<?php include "../navbar.php";
+  include "../Controladors/producteControl.php";
+  
+  $productMostrar = new ProducteControl();
+  $idPro = $_GET["idPro"]
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +15,9 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../bootstrap/css/product_detail.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../bootstrap/js/product_detail.js"></script>
+    <script src="./js/product_detail.js"></script>
 </head>
 <body>
-    <?php include "../navbar.php";
-          include "../Controladors/imaProControl.php";
-          include "../Controladors/producteControl.php";
-
-          $imageMostrar = new ImaProductControl();
-          $productMostrar = new ProducteControl();
-          $idPro = $_GET["idPro"]
-    ?>
-
 <!-- content -->
 <section class="py-5">
   <div class="container">
@@ -28,29 +26,29 @@
         <div class="border rounded-4 mb-3 d-flex justify-content-center">
           <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" >
           <?php
-            echo '<img id = "imatge_producte" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="'. $imageMostrar->obtenirRutaIma($idPro, 0) .'"/>'
+            echo '<img id = "imatge_producte" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="'. $productMostrar->obtenirRutaIma($idPro, 0) .'"/>'
           ?>
           </a>
         </div>
         <div class="d-flex justify-content-center mb-3">
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"  class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 0) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 0) .'"/>'
           ?>
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 1) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 1) .'"/>'
           ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 2) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 2) .'"/>'
           ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
           <?php
-            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $imageMostrar->obtenirRutaIma($idPro, 3) .'"/>'
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 3) .'"/>'
           ?>          
           </a>
         </div>
