@@ -1,4 +1,4 @@
-<?php include "../navbar.php";
+<?php include "./navbar.php";
   include "../Controladors/producteControl.php";
   
   $productMostrar = new ProducteControl();

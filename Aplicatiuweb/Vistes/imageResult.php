@@ -75,7 +75,7 @@ session_start();
 
 
     <!--  FOOTER  -->
-    <?php include '../footer.php'; ?>
+    <?php include './footer.php'; ?>
 
     <script>
         const promptText = document.getElementById('promptText');

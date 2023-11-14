@@ -4,9 +4,7 @@ import requests
 from fastapi import FastAPI
 import sqlite3
 from fastapi.middleware.cors import CORSMiddleware
-from openai import OpenAI
 from pydantic import BaseModel
-from dotenv import load_dotenv
 
 
 url = "https://api.picanova.com/api/beta"
@@ -55,6 +53,7 @@ def get_products():
     
 class RequestData(BaseModel):
     topic: str
+
 @app.post("/generateImages")
 async def generateImages(request_data: RequestData):
     # API CALL
