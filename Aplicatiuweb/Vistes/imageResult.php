@@ -32,9 +32,9 @@ session_start();
                     ?>
                 </div>
 
-                <p class="mt-2">
-                    <a href="/Vistes/imagePrompt.php" class="btn btn-secondary mx-3">Reset Process</a>
-                    <a href="#" class="btn btn-primary">Save</a>
+                <form class="mt-2" method="post" action="/Controladors/imageController.php">
+                    <button name="resetButton" id="resetButton" type="submit" href="/Vistes/imagePrompt.php" class="btn btn-secondary mx-3">Reset Process</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </p>
             </div>
         </div>
@@ -46,17 +46,22 @@ session_start();
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title">History</h5>
+                            <?php
+                            $promptList = $_SESSION['promptList'];
+                            foreach ($promptList as $i => $prompt) {
+                                echo '<p class="card-text border rounded bg-secondary text-white p-2" style="max-width: 750px;">'.$prompt.'</p>';
+                            }
+                            ?>
+                            
                         </div>
                         <div class="card-body">
-                            <form method="post" action="imageChoose.php"
+                            <form method="post" action="imageController.php"
                                 class="row row-cols-lg-auto g-3 align-items-center">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="promptText"
+                                    <input type="text" class="form-control" name="promptText" id="promptText"
                                         placeholder="Enter the topic here">
-                                    <button disabled id="promptButton" type="submit"
+                                    <button disabled name="promptButton" id="promptButton" type="submit"
                                         class="btn btn-success">Submit</button>
                                 </div>
                             </form>
