@@ -9,22 +9,6 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 
 
-""" AIXO SERÀ LA CREACIÓ DE LA TAULA A LA BASE DE DADES
-conn = sqlite3.connect('ejemplo.db')
-cursor = conn.cursor()
-
-# Crea una tabla para almacenar información de productos
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS productos (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nombre TEXT,
-        descripcion TEXT
-    )
-''')
-
-conn.commit()
-"""
-
 url = "https://api.picanova.com/api/beta"
 app = FastAPI()
 
@@ -61,12 +45,6 @@ def get_products():
         # Verificar el codig d'estat de la resposta
         if response.status_code == 200:
             products = response.json()
-            
-            """ Continuació de insertar informació a la taula
-            for product in products:
-                cursor.execute("INSERT INTO productos (nombre, descripcion) VALUES (?, ?)", (product.get("name", ""), product.get("description", "")))
-            conn.commit()
-            """
             
             return {"data": products}
         else:

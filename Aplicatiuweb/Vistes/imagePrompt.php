@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +33,9 @@
     </style>
 
 </head>
-
+<?php include 'navbar.php'; ?>
 <body>
-    <?php include '../navbar.php'; ?>
+   
 
     <!-- PROMPT INPUT -->
     <div class="container">
@@ -104,5 +105,6 @@
     </script>
 
 </body>
+<?php include 'footer.php'; ?>
 
 </html>

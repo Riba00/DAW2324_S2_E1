@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productes</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../bootstrap/css/productes.css">
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/product_detail.js"></script>
     <script src = "./js/llistaProductes.js"></script>
 </head>
@@ -282,6 +281,6 @@
 <!-- sidebar + content -->
 
 
-    <?php include "../footer.php" ?>
+    <?php include "footer.php" ?>
 </body>
 </html>

@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+    <title>DAW2324_S2_E1</title>
 
     <!-- Enlazar archivo CSS de Bootstrap (desde node_modules) -->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -28,14 +27,25 @@
                     </li>
                     
                     <li class="nav-item position-absolute end-0 me-5" id="registre-li">
-                        <a class="nav-link text-white" href="/Vistes/login.php">Iniciar Sessión</a>
+                        <a class="nav-link text-white" href="/Vistes/login.php">Iniciar Sesión</a>
                     </li>
                    
                 </ul>
             </div>
         </div>
     </nav>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <?php 
+    if (!isset($_SESSION['loggedin'])){
+        $_SESSION['loggedin'] = false;
+    }
+    elseif ($_SESSION['loggedin']) {
+        echo '<script>var sesionIniciada = true;</script>';
+    } 
+    ?>
+    <script src="../javascript/sessio.js"></script>
+
 </body>
 
 </html>

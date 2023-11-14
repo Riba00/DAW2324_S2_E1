@@ -24,32 +24,33 @@ class UserController {
     }
 
     private function validarDatos($nombre, $email) {
-        // Implementar lógica de validación aquí (longitud, formato de correo, etc.)
-        // Devolver true si los datos son válidos, false si no lo son
-        return true;
+        // Verificar que los campos no estén vacíos
+        if (!empty($nombre) && !empty($email)) {
+            // Implementar lógica adicional de validación aquí (longitud, formato de correo, etc.)
+            return true; // Devolver true si los datos son válidos
+        } else {
+            return false; // Devolver false si los datos no son válidos
+        }
     }
 }
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cerrar_sesion'])) {
-    // Destruir la sesión
-    session_destroy();
-    session_unset();
-    // Redirigir a la página de inicio de sesión
-    header("Location: /Vistes/login.php");
-    exit();
-}
-elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['borrar_cuenta'])) {
-    $usuari = new User();
-    $borrarcuenta = $usuari->borrarCuenta($_SESSION['usuario_email']);
-    session_destroy();
-    session_unset();
-    header("Location: /Vistes/registre.php");
-    exit();
-}
-
-elseif ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!empty($_POST['nombre']) && !empty($_POST['email'])) {
+    // Verificar si se ha enviado la solicitud para cerrar sesión
+    if (isset($_POST['cerrar_sesion'])) {
+        // Destruir la sesión
+        session_destroy();
+        session_unset();
+        // Redirigir a la página de inicio de sesión
+        header("Location: /Vistes/login.php");
+        exit();
+    } elseif (isset($_POST['borrar_cuenta'])) {
+        $usuari = new User();
+        $borrarcuenta = $usuari->borrarCuenta($_SESSION['usuario_email']);
+        session_destroy();
+        session_unset();
+        header("Location: /Vistes/registre.php");
+        exit();
+    } else {
         // Asegurar que la sesión esté iniciada y el usuario esté autenticado
         if (isset($_SESSION['usuario_id'])) {
             $id = $_SESSION['usuario_id'];
@@ -67,8 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Redirigir a la página de perfil con un mensaje de éxito
                 header("Location: /Vistes/perfil.php");
-
-                //require '../Vistes/perfil.php';
                 exit();
             } else {
                 // La actualización en la base de datos falló, redirigir con un mensaje de error
@@ -77,11 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         } else {
             // El usuario no está autenticado, redirigir a la página de inicio de sesión
-            require '../Vistes/login.php';
+            header("Location: /Vistes/login.php");
             exit();
         }
     }
 }
-}
-
 ?>

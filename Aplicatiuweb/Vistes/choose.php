@@ -1,16 +1,16 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
 </head>
+<?php include 'navbar.php'; ?>
 
 <body>
-    <?php include '../navbar.php'; ?>
-
+   
     <div class="d-flex flex-column align-items-center justify-content-center" style="height: 70vh;">
         <div class="text-center mb-4">
             <p class="display-4">Per on començem?</p>
@@ -30,7 +30,7 @@
     </div>
 
 
-    <?php include '../footer.php'; ?>
+    <?php include 'footer.php'; ?>
 </body>
 
 
