@@ -12,7 +12,7 @@
     <script src="../bootstrap/js/product_detail.js"></script>
 </head>
 <body>
-    <?php include "../navbar.php";
+    <?php include "./navbar.php";
           include "../Controladors/imaProControl.php";
           include "../Controladors/producteControl.php";
 
