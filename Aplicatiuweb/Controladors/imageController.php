@@ -3,7 +3,7 @@ session_start();
 
 // Prompt button
 if (isset($_POST['promptButton'])) {
-    $topic = $_POST['promptText'];
+    $topic = htmlspecialchars($_POST['promptText']);
     if (empty($_SESSION['promptList'])){
         $_SESSION['promptList'] = array();
     }
