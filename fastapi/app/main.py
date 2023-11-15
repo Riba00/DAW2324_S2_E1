@@ -4,9 +4,7 @@ import requests
 from fastapi import FastAPI
 import sqlite3
 from fastapi.middleware.cors import CORSMiddleware
-from openai import OpenAI
 from pydantic import BaseModel
-from dotenv import load_dotenv
 
 
 """ AIXO SERÀ LA CREACIÓ DE LA TAULA A LA BASE DE DADES

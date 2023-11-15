@@ -65,7 +65,7 @@
 
     <div class="text-center p-4 bg-secondary">
         <div class="d-flex flex-column align-items-center">
-            <p class="display-4">Texto en el centro</p>
+            <p class="display-4">Transforma tu deseo en realidad hoy</p>
             <a href="Vistes/choose.php" class="btn btn-primary btn-lg">Prueba gratis</a>
         </div>
     </div>
