@@ -8,7 +8,8 @@ from fastapi.security import OAuth2PasswordBearer
 from dotenv import load_dotenv
 import os
 from fastapi import Form
-
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 # Carregar les variables d'entorn des de l'arxiu .env
 load_dotenv()
 
