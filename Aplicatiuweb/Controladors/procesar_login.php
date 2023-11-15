@@ -1,9 +1,9 @@
 <?php
-session_start();
+session_start(); //inciem sessió per manejar variables de sessió
 require_once '../Model/user_class.php';
 
 class ControladorLogin {
-    // Constructor vacío
+    // Constructor buit
     public function __construct() {}
 
     // Función para manejar el inicio de sesión
@@ -14,12 +14,11 @@ class ControladorLogin {
             $usuari = new User();
             $loginar = $usuari->loginar($email, $contrasena);
             if ($loginar) {
+                $infousuari = $usuari->recuperarInfoUsuari($email);
                 // El usuario fue autenticado correctamente
                 // Iniciar sesión y redirigirlo a la página de perfil
-                $infousuari = $usuari->recuperarInfoUsuari($email);
-                
                 if ($infousuari) {
-                    $valor = true;
+                    $valor = true; //s'usará per a que posteriorment desaparegue "Iniciar sessión" del header hi aparegue perfil
                     $_SESSION['loggedin'] = $valor;
                     $_SESSION['usuario_id'] = $infousuari['id'];
                     $_SESSION['usuario_nombre'] = $infousuari['username'];

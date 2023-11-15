@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- incloir tots els elements del head en el navbar aixi al fer l'include a les altres pagines totes tindran el mateix -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Vision</title>
 
-    <!-- Enlazar archivo CSS de Bootstrap (desde node_modules) -->
+    <!-- Busqueda de bootstrap (descarregat) no desde el cdn-->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
@@ -34,9 +35,11 @@
             </div>
         </div>
     </nav>
+    <!-- Busqueda de jquery per usar a javascript i busqueda del bootstrap (descarregat) -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <?php 
+    //comprovar si l'usuari ha iniciat sessió, en cas afirmatiu logedin es fica amb true i desapareixerà de la capçalera el botó inciar sessión
     if (!isset($_SESSION['loggedin'])){
         $_SESSION['loggedin'] = false;
     }

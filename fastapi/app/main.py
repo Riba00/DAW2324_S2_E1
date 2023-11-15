@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 import os
 from fastapi import Form
 
-# Cargar las variables de entorno desde el archivo .env
+# Carregar les variables d'entorn des de l'arxiu .env
 load_dotenv()
 
 # Configurar la URL de la API externa
@@ -31,18 +31,18 @@ app.add_middleware(
 )
 
 
-# Obtener las variables de entorno
+# Obtener las variables de entorno (definides al arxiu .env)
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM")
 
 # Configurar el esquema de autenticación OAuth2 con contraseña
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-# Definir las credenciales de la API externa
+# Definir las credenciales de la API externa (la de picanova) (també l'usem com a usuari y contrasenya propis, s'haurà de canviar)
 external_api_user = "virtual-vision"
 external_api_password = "2b8af5289aa93fc62eae989b4dcc9725"
 
-# Codificar las credenciales en Base64 para el encabezado de autorización
+# Codificar las credenciales en Base64 para el encabezado de autorización que haremos a picanova
 encriptacio =  base64.b64encode(f"{external_api_user}:{external_api_password}".encode("utf-8")).decode("utf-8")
 headerspica = {
     "Authorization": f"Basic {encriptacio}"
@@ -54,7 +54,7 @@ headerspica = {
 def create_token(data: dict):
     return jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
 
-# Función para obtener el usuario actual a partir del token JWT
+# Función para obtener el usuario actual a partir del token JWT 
 def get_current_user(token: str = Depends(oauth2_scheme)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -69,11 +69,11 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
         # Capturar errores relacionados con el token
         raise credentials_exception
     
-# Función para verificar las credenciales de usuario
+# Función para verificar las credenciales de usuario (usuario propio)
 def verify_credentials(username: str, password: str):
     return username == external_api_user and password == external_api_password
 
-# Definir la ruta para autenticar y obtener un token
+# Definir la ruta para autenticar y obtener un token (ruta per obtenir token) les probes s'han de realitzar amb postman
 @app.post("/token")
 def login(username: str = Form(...), password: str = Form(...)):
     credentials_exception = HTTPException(
@@ -87,7 +87,7 @@ def login(username: str = Form(...), password: str = Form(...)):
             # Credenciales válidas, generar un token
             data = {"sub": username}
             access_token = create_token(data)
-            return {"access_token": access_token, "token_type": "bearer"}
+            return {"access_token": access_token, "token_type": "bearer"} #retornar token en cas que estigue correcte
         else:
             # Credenciales inválidas, lanzar una excepción
             raise credentials_exception

@@ -5,7 +5,7 @@ class ControladorRegistro {
     public function __construct() {}
 
     public function registrarUsuario($nombre, $email, $contrasena, $confirmarContrasena) {
-        // Validar y escapar los datos recibidos del formulario
+        // Validar y escapar los datos recibidos del formulario per a que no nos puedan insertar codigo
         $nombre = htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8');
         $email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
         $contrasena = htmlspecialchars($contrasena, ENT_QUOTES, 'UTF-8');
@@ -28,11 +28,12 @@ class ControladorRegistro {
                     $_SESSION['usuario_email'] = $email;
                     $_SESSION['loggedin'] = true;
 
-                    // Redirigir a la página de perfil
+                    // Redirigir a la página de login
                     header("Location: /Vistes/login.php");
                     exit();
                 } 
             } else {
+                //en cas que falli el registre redirigir al registre
                 header("Location: /Vistes/registre.php");
             }
         } 

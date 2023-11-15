@@ -10,7 +10,7 @@ if(isset($_SESSION['usuario_nombre'])) {
 <html lang="en">
 <?php include 'navbar.php'; ?>
 <head>
-    <script>
+    <script> //Script validació de camps al formulari
         function validarInicioSesion() {
             var email = document.getElementById('email').value.trim();
             var contrasena = document.getElementById('contrasena').value.trim();
@@ -19,7 +19,7 @@ if(isset($_SESSION['usuario_nombre'])) {
             document.getElementById('email').style.backgroundColor = '';
             document.getElementById('contrasena').style.backgroundColor = '';
 
-            // Validar campos
+            // Validar campos en caso de no estar rellenos se ponen rojos
             if (email === '' || contrasena === '') {
                 mostrarError('Por favor, complete todos los campos.');
                 if (email === '') {
@@ -34,7 +34,7 @@ if(isset($_SESSION['usuario_nombre'])) {
             return true;
         }
 
-        function mostrarError(mensaje) {
+        function mostrarError(mensaje) { //misatge d'error que mostrarem per pantalla
             var mensajeError = document.getElementById('mensaje-error');
             mensajeError.style.display = 'block';
             mensajeError.innerHTML = mensaje;
@@ -43,6 +43,7 @@ if(isset($_SESSION['usuario_nombre'])) {
 </head>
 
 <body>
+    <!-- element que mostrarà el missatge d'error -->
     <div id="mensaje-error" class="alert alert-danger" style="display: <?php echo isset($_GET['error']) ? 'block' : 'none'; ?>;">
         <?php echo isset($_GET['error']) ? 'Usuario o contraseña incorrectos.' : ''; ?>
     </div>
@@ -50,7 +51,7 @@ if(isset($_SESSION['usuario_nombre'])) {
         <h1>Iniciar Sesión</h1>
 
         <!-- Formulario de Inicio de Sesión -->
-        <form method="post" action="/Controladors/procesar_login.php" onsubmit="return validarInicioSesion()">
+        <form method="post" action="/Controladors/procesar_login.php" onsubmit="return validarInicioSesion()"> <!-- validació dels camps gràcies al script anterior -->
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['usuario_nombre'])) {
-    // La sesión está iniciada, redirigir a la página de perfil o a la página que desees
+    // La sesión está iniciada, redirigir a la página de perfil 
     header("Location: /Vistes/perfil.php");
     exit();
 }?>
@@ -12,7 +12,7 @@ if(isset($_SESSION['usuario_nombre'])) {
 <?php include 'navbar.php'; ?>
 <head>
     <script>
-        // En validaciones_registro.js
+        // En validacions per als camps del formulari registre
 
         function escapeHTML(str) {
             var div = document.createElement('div');
@@ -79,6 +79,7 @@ if(isset($_SESSION['usuario_nombre'])) {
 </head>
 
 <body>
+    <!-- element que mostra els missatges d'error per defecete esta en display none per a que no es veigui --> 
     <div id="mensaje-error" class="alert alert-danger" style="display: none;"></div>  
     <div class="container mt-5">
         <h1>Crear cuenta</h1>

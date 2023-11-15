@@ -1,5 +1,5 @@
-<?php session_start(); 
-if(!isset($_SESSION['usuario_nombre'])) {
+<?php session_start(); //inciar sessió per usar les variables de sessió
+if(!isset($_SESSION['usuario_nombre'])) { //en cas que no s'ha iniciat sessió encara redirigir al login
     header("Location: /Vistes/login.php");
     exit();
 }
@@ -9,7 +9,7 @@ if(!isset($_SESSION['usuario_nombre'])) {
 
 <?php include 'navbar.php';?>
 <head>
-    <script>
+    <script> //validacions javascript per al formulari
         function validarFormulario() {
             var nombre = document.getElementById('nombre').value.trim();
             var email = document.getElementById('email').value.trim();
@@ -49,17 +49,18 @@ if(!isset($_SESSION['usuario_nombre'])) {
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5"> <!-- mostrar per pantalla al usuari el seu nom id i email (modificable) --> 
         <h1>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario_nombre'], ENT_QUOTES, 'UTF-8'); ?>!</h1>
         <p>ID de Usuario: <?php echo htmlspecialchars($_SESSION['usuario_id'], ENT_QUOTES, 'UTF-8'); ?></p>
         <p>Correo Electrónico: <?php echo htmlspecialchars($_SESSION['usuario_email'], ENT_QUOTES, 'UTF-8'); ?></p>
 
         <!-- Formulario de actualización -->
         <h2>Actualizar Datos</h2>
-        <form method="post" action="/Controladors/controlador_perfil.php" onsubmit="return validarFormulario()">
+        <form method="post" action="/Controladors/controlador_perfil.php" onsubmit="return validarFormulario()"> <!-- en enviar formulari realitzar el script de validació -->
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo htmlspecialchars($_SESSION['usuario_nombre'], ENT_QUOTES, 'UTF-8'); ?>">
+                <label for="nombre" class="form-label">Nombre</label> 
+                <!-- evitar inserció codi -->
+                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo htmlspecialchars($_SESSION['usuario_nombre'], ENT_QUOTES, 'UTF-8'); ?>">  
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico</label>
@@ -75,7 +76,6 @@ if(!isset($_SESSION['usuario_nombre'])) {
 
     <?php include 'footer.php'; ?>
     
-    <!-- Scripts de Bootstrap u otros scripts adicionales -->
 </body>
 
 </html>
