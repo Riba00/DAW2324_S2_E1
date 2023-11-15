@@ -1,3 +1,10 @@
+<?php include "./navbar.php";
+  include "../Controladors/producteControl.php";
+  
+  $productMostrar = new ProducteControl();
+  $idPro = $_GET["idPro"]
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +15,9 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../bootstrap/css/product_detail.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../bootstrap/js/product_detail.js"></script>
+    <script src="./js/product_detail.js"></script>
 </head>
 <body>
-    <?php include "../navbar.php" ?>
-
 <!-- content -->
 <section class="py-5">
   <div class="container">
@@ -20,21 +25,31 @@
       <aside class="col-lg-6">
         <div class="border rounded-4 mb-3 d-flex justify-content-center">
           <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" >
-            <img id = "imatge_producte" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="../img/product_picanova/ima1.jpg" />
+          <?php
+            echo '<img id = "imatge_producte" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="'. $productMostrar->obtenirRutaIma($idPro, 0) .'"/>'
+          ?>
           </a>
         </div>
         <div class="d-flex justify-content-center mb-3">
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"  class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima1.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 0) .'"/>'
+          ?>
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima2.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 1) .'"/>'
+          ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima3.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 2) .'"/>'
+          ?>          
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="../img/product_picanova/ima4.jpg" />
+          <?php
+            echo '<img width="60" height="60" class="rounded-2" onclick="changeImage(this)" src="'. $productMostrar->obtenirRutaIma($idPro, 3) .'"/>'
+          ?>          
           </a>
         </div>
         <!-- thumbs-wrap.// -->
@@ -43,8 +58,9 @@
       <main class="col-lg-6">
         <div class="ps-lg-3">
           <h4 class="title text-dark">
-            Quality Men's Hoodie for Winter, Men's Fashion <br />
-            Casual Hoodie
+            <?php
+              print_r($productMostrar->mostrarNom($idPro));
+            ?>
           </h4>
           <div class="d-flex flex-row my-3">
             <div class="text-warning mb-1 me-2">
@@ -62,7 +78,11 @@
           </div>
 
           <div class="mb-3">
-            <span class="h5">$75.00</span>
+            <span class="h5">
+              <?php
+                print_r($productMostrar->mostrarPreu($idPro));
+              ?>
+            </span>
             <span class="text-muted">/per box</span>
           </div>
 
@@ -100,11 +120,11 @@
             <div class="col-md-4 col-6 mb-3">
               <label class="mb-2 d-block">Quantity</label>
               <div class="input-group mb-3" style="width: 170px;">
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark" onclick="sumarUnProducte()">
+                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark" onclick="restarUnProducte()">
                 <span class="glyphicon glyphicon-minus">-</span>                
                 </button>
-                <input id ="cantitat_productes" type="text" class="form-control text-center border border-secondary" value = "hola" />
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark" onclick="restarUnProducte()">
+                <input id ="cantitat_productes" type="text" class="form-control text-center border border-secondary" value = "1" />
+                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark" onclick="sumarUnProducte()">
                   <span class="glyphicon glyphicon-plus">+</span>               
                 </button>
               </div>
@@ -175,6 +195,6 @@
   </div>
 </section>
 
-    <?php include "../footer.php" ?>
+    <?php include "footer.php" ?>
 </body>
 </html>

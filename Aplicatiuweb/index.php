@@ -1,16 +1,14 @@
 <?php session_start(); ?>
+<head>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VirtualVision</title>
     <link href="style.css" rel="stylesheet">
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    
     <style>
-<<<<<<< HEAD
          .carousel-item img {
         width: 100%; /* Ajusta el ancho a 100% del contenedor */
         height: 600px; /* Establece la altura fija deseada */
@@ -27,7 +25,7 @@
             /* Ajusta la imagen a la altura */
         }
 
->>>>>>> main
+
         /* Cambiar el color de los íconos de Previous y Next a negro */
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
@@ -45,7 +43,7 @@
 
 </head>
 
-<?php include 'navbar.php'; ?>
+<?php include 'Vistes/navbar.php'; ?>
 
 <body>
     <!-- CARROUSSEL -->
@@ -75,7 +73,7 @@
     <div class="text-center p-4 bg-secondary">
 <<<<<<< HEAD
     <div class="d-flex flex-column align-items-center">
-        <p class="display-4">Texto en el centro</p>
+        <p class="display-4">Transforma tu deseo en realidad hoy</p>
         <a href="Vistes/choose.php" class="btn btn-primary btn-lg">Prueba gratis</a>
     </div>
 </div>

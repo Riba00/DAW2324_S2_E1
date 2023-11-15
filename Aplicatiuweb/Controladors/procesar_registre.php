@@ -5,6 +5,12 @@ class ControladorRegistro {
     public function __construct() {}
 
     public function registrarUsuario($nombre, $email, $contrasena, $confirmarContrasena) {
+        // Validar y escapar los datos recibidos del formulario per a que no nos puedan insertar codigo
+        $nombre = htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8');
+        $email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+        $contrasena = htmlspecialchars($contrasena, ENT_QUOTES, 'UTF-8');
+        $confirmarContrasena = htmlspecialchars($confirmarContrasena, ENT_QUOTES, 'UTF-8');
+
         // Verificar si los campos no están vacíos
         if (!empty($nombre) && !empty($email) && !empty($contrasena) && !empty($confirmarContrasena)) {
             // Verificar si las contraseñas coinciden
@@ -20,19 +26,17 @@ class ControladorRegistro {
                     $_SESSION['usuario_id'] = $idDelUsuario;
                     $_SESSION['usuario_nombre'] = $nombre;
                     $_SESSION['usuario_email'] = $email;
+                    $_SESSION['loggedin'] = true;
 
-                    // Redirigir a la página de perfil
-                    header("Location: /Vistes/perfil.php");
+                    // Redirigir a la página de login
+                    header("Location: /Vistes/login.php");
                     exit();
-                } else {
-                    echo "Error al crear el usuario.";
-                }
+                } 
             } else {
-                echo "Las contraseñas no coinciden.";
+                //en cas que falli el registre redirigir al registre
+                header("Location: /Vistes/registre.php");
             }
-        } else {
-            echo "Por favor, complete todos los campos del formulario.";
-        }
+        } 
     }
 }
 
